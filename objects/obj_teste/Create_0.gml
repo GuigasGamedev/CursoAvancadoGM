@@ -1,5 +1,13 @@
 tempo = 5;
 
+//Exercício de get-timer
+//get_timer retorna o tempo que o jogo está rodando em microsegundos
+
+segundos = 0; //get+timer / 1milhão 
+minutos = 0; //segunds / 60
+horas = 0; //minutos / 60
+dias = 0; //horas / 24
+
 
 #region funcoes
 movimento = function(){
@@ -34,4 +42,23 @@ mostraTempo = function(){
 	draw_set_valign(-1);
 }
 
+
+mostraTempoJogado = function(){
+	
+	
+	segundos = get_timer() / 100000;
+	segundos %= 60;
+	minutos = (get_timer / 100000) / 60;
+	horas = minutos / 60;
+	dias = horas / 24;
+	
+	if(keyboard_check(vk_space)){
+	
+		show_message("Segundos: "+string(round(segundos))+" Minutos: "+string(floor(minutos))+" Horas: "+string(horas)+" Dias: "+string(dias));
+	
+	}
+		
+	
+	
+}
 #endregion
