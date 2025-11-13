@@ -15,6 +15,9 @@ velvMax = 5;
 velhMax = 5;
 acel = .1;
 
+//exercicio de make_colour
+satura = 0;
+
 #endregion
 
 #region algumas funções
@@ -31,6 +34,9 @@ acel = .1;
 	//A função lerp retorna um valor entre um max e um min de acordo com um terceiro valor
 	//lerp(0, 10, .5) retorna 5, ja que 0.5 de 0 e 10 é 5
 	//A função lerp pode ser utilizada com variáveis. Desta maneira, ela se comporta como algo parecido a uma aproximação
+	
+	//A função make_colour() voce pode criar cores de acordo com hsv ou rgb
+	//image_blend = make_colour_hsv(128, 225, 225);
 	
 #endregion
 
@@ -63,6 +69,15 @@ movimento = function(){
 	//alterando os eixos
 	x += velh;
 	y += velv;
+	
+	//Utilizando a função lerp para diminuir a velocidade gradualmente
+	if(!_right && !_left){
+		velh = lerp(velh, 0, .1);
+	}
+	
+	if(!_up && !_down){
+		velv = lerp(velv, 0, .1);	
+	}
 
 	//A função sign retorna o sinal de um numero. Se o numero for igual a 0, ela retorna 0;
 	/*
@@ -83,6 +98,18 @@ movimento = function(){
 	//Se o valor estiver fora do intervalo, ele volta para dentro do intervalo
 	
 	
+	//fazendo com que a cor mude conde conforme voce aperta os botões usando o make_colour
+	if(_left or _right){
+	
+		satura = lerp(satura, 255, .1);
+	
+	}else{
+		
+		satura = lerp(satura, 0, .1);
+		
+	}
+	
+	image_blend = make_colour_hsv(0, satura, 255);
 	
 }
 
