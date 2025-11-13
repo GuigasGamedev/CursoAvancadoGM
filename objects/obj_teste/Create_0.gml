@@ -38,6 +38,11 @@ satura = 0;
 	//A função make_colour() voce pode criar cores de acordo com hsv ou rgb
 	//image_blend = make_colour_hsv(128, 225, 225);
 	
+	//sin e cos - Seno e Cosseno
+	//sin e cos sempre retornam um valor ente 1 ou -1
+	//essas funções são boas para fazer animações de ondas ou animações repetitivas
+	//uso dessa ferramnta na animação do objeto moeda
+	
 #endregion
 
 #region funcoes
