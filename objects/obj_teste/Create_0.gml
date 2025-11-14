@@ -10,18 +10,19 @@ horas = 0;
 dias = 0; 
 
 //definindo velocidades para a sprite
-velv = 0;
-velh = 0;
+//velv = 0;
+//velh = 0;
 velvMax = 5;
 velhMax = 5;
 acel = .1;
+vel = 5;
 
 //exercicio de make_colour
 satura = 0;
 
 #endregion
 
-#region algumas funções
+#region algumas funções do gmaemaker
 
 	//A função abs retorna o valor absoluto de um numero. Ela sempre retorna o valor positivo
 	//show_message(abs(-5));
@@ -54,7 +55,7 @@ satura = 0;
 movimento = function(){
 	
 	//chamando a função teste do lerp
-	movendoComMouse();
+	//movendoComMouse();
 
 	//delta_time conta o tempo entre os frames em microsegundos. Dessa forma, a contagem de tempo é precisa independente do fps que o jogo esta rodando
 	if(tempo > 0){
@@ -68,7 +69,38 @@ movimento = function(){
 	_up = keyboard_check(ord("W")) or keyboard_check(vk_left);
 	_down = keyboard_check(ord("S")) or keyboard_check(vk_left);
 
+	
+	
+	//Fazendo ele se mover com o lentghdir
+	if(_left xor _right or _up xor _down){
+	
+		var _dir = point_direction(0, 0, (_right - _left), (_down - _up));
+		
+		x += lengthdir_x(vel, _dir);
+		y += lengthdir_y(vel, _dir);
+	
+	}
 
+	//fazendo ele se mover utilizando o mouse e o lenghtdir
+	/*
+	var _mouse_click = mouse_check_button(mb_left);
+	
+	if(_mouse_click){
+	
+		//achando a direção em relação a esse objeto com o mouse
+		var _dir = point_direction(x, y, mouse_x, mouse_y);
+		
+		//achando as direções do objeto
+		var _velv = lengthdir_y(vel, _dir);
+		var _velh = lengthdir_x(vel, _dir);
+	
+		x += _velh;
+		y += _velv;
+	}
+	*/
+
+	
+	/*
 	//movendo utilizando o velh e velv
 	velh += (_right - _left) * acel;
 	velv += (_down - _up) * acel;
@@ -88,6 +120,8 @@ movimento = function(){
 	if(!_up && !_down){
 		velv = lerp(velv, 0, .1);	
 	}
+	
+	*/
 
 	//A função sign retorna o sinal de um numero. Se o numero for igual a 0, ela retorna 0;
 	/*
@@ -109,6 +143,7 @@ movimento = function(){
 	
 	
 	//fazendo com que a cor mude conde conforme voce aperta os botões usando o make_colour
+	/*
 	if(_left or _right){
 	
 		satura = lerp(satura, 255, .1);
@@ -120,6 +155,7 @@ movimento = function(){
 	}
 	
 	image_blend = make_colour_hsv(0, satura, 255);
+	*/
 	
 }
 

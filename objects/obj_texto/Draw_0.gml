@@ -1,0 +1,3 @@
+
+
+desenhaTexto(texto);
