@@ -1,6 +1,6 @@
 var _tempo = get_timer() / 1000000;
 
-x += 5 * sin(5 * _tempo);
+hspeed = 5 * sin(5 * _tempo);
 
 
 if(y < -65){

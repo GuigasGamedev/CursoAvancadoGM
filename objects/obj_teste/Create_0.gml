@@ -1,6 +1,7 @@
 #region variaveis
 
 tempo = 5;
+testeTempo = 0;
 
 //Exercício de get-timer
 segundos = 0; 

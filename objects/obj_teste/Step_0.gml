@@ -1,2 +1,3 @@
 movimento();
 mostraTempoJogado();
+testeTempo++;
