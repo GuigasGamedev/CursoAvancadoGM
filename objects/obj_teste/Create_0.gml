@@ -44,6 +44,10 @@ satura = 0;
 	//essas funções são boas para fazer animações de ondas ou animações repetitivas
 	//uso dessa ferramnta na animação do objeto moeda
 	
+	//Lenghtdir()
+	//lenghtdir(x ou y) retorna a distancia de algo entre um valor de distancia e um angulo
+	//mais exemplos la no draw
+	
 #endregion
 
 #region funcoes
