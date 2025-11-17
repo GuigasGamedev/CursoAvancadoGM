@@ -1,3 +1,3 @@
 
 
-desenhaTexto(texto);
+desenhaTexto(texto+texto2+keyboard_string);
