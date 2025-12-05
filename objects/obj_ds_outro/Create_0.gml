@@ -16,7 +16,6 @@ ds_stack_push(pilha, "cachorro", "gato", "morcego", "piranha");
 ds_list_add(lista, "cachorro", "gato", "morcego", "piranha");
 
 remove = function(){
-
 	if(keyboard_check_released(vk_enter)){
 	
 		var _item = ds_stack_pop(pilha);
@@ -24,7 +23,13 @@ remove = function(){
 		var _pos = ds_list_find_index(lista, _item);
 		
 		ds_list_delete(lista, _pos);
-	
 	}
+}
+
+//funçao para se mover em uma direção
+move_dir = function(_dir){
+	
+	x += lengthdir_x(64, _dir);
+	y += lengthdir_y(64, _dir);
 	
 }
